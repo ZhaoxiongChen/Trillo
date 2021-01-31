@@ -1,0 +1,5 @@
+# macOS dot_clean
+._*
+
+# installed NPM modules
+node_modules
