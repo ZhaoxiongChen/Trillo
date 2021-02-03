@@ -1,30 +1,117 @@
-.container {
-    max-width: 120rem;
-    margin: 8rem auto;
-    background-color: var(--color-grey-light-2);
-    box-shadow: var(--shadow-black);
-    // Test
-    min-height: 50rem;
+// Logo
+.logo {
+    height: 3.25rem;
+    margin-left: 2rem;
 }
 
-.header {
-    height: 7rem;
-    background-color: #fff;
-    border-bottom: var(--color-grey-light-2)
-}
+// Search box
+.search {
+    flex: 0 0 40%;
 
-.content {
+    // Nested flexbox
     display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__input {
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        background-color: var(--color-grey-light-2);
+        border: none;
+        padding: .7rem 2rem;
+        border-radius: 100px;
+        width: 90%;
+        transition: all 0.2s;
+        margin-right: -3.25rem; // Make the logo place inside the search form
+        
+        &:focus {
+            outline: none;
+            width: 100%;
+            background-color: var(--color-grey-light-3);
+        }
+
+        &::-webkit-input-placeholder {
+            font-weight: 100;
+            color: var(--color-grey-light-4);
+        }
+    }
+
+    &__input:focus + &__button {
+        background-color: var(--color-grey-light-3);
+    }
+
+    &__button {
+        border: none;
+        background-color: var(--color-grey-light-2);
+        transition: all .2s;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: var(--color-grey-dark-3);
+    }
 }
 
-.sidebar {
-    background-color: var(--color-grey-dark-1);
+// User navigation
+.user-nav {
+    display: flex;
+    
+    align-self: stretch;
 
-    flex: 0 0 18%; // No grow and shrink, 18% of width as base
-}
+    & > * {
+        padding: 0 2rem;
+        cursor: pointer;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
 
-.hotel-view {
-    background-color: #fff;
+    & > *:hover {
+        background-color: var(--color-grey-light-2);
+    }
 
-    flex: 1; // Grow enabled
+    &__icon-box {
+        position: relative;
+    }
+
+    &__icon {
+        height: 2.25rem;
+        width: 2.25rem;
+        fill: var(--color-grey-dark-2);   
+    }
+
+    &__notification {
+        // size and shape
+        font-size: .8rem;
+        height: 1.75rem;
+        width: 1.75rem;
+        border-radius: 100%;
+        // notification color
+        background-color: var(--color-primary);
+        color: #fff;
+        // position
+        position: absolute;
+        top: 1.5rem;
+        right: 1.1rem;
+        // align the texts
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__user-photo {
+        height: 3.75rem;
+        border-radius: 50%;
+        margin-right: 1rem;
+    }
 }
