@@ -25,10 +25,17 @@
     background-color: var(--color-grey-dark-1);
 
     flex: 0 0 18%; // No grow and shrink, 18% of width as base
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // Container is set as space-between, make a giant gap between side-nav and legal
 }
 
 .hotel-view {
     background-color: #fff;
+
+    // TEST HEIGHT
+    height: 100rem;
 
     flex: 1; // Grow enabled
 }
