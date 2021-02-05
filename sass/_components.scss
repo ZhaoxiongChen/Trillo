@@ -446,3 +446,70 @@
         z-index: 10;
     }
 }
+
+// Call to action
+.cta {
+    padding: 3.5rem 0;
+    text-align: center;
+
+    &__book-now {
+        font-size: 2rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+    }
+}
+
+// Button in CTA
+.btn {
+    font-size: 1.5rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    border-radius: 100px;
+    border: none;
+    background-image: linear-gradient(to bottom, var(--color-primary-light), var(--color-primary-dark));
+    color: white;
+
+    // For hover effect absolute position reference
+    position: relative;
+    // Hide the invisible button
+    overflow: hidden;
+
+    cursor: pointer;
+
+    & > * {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        transition: all .2s;
+    }
+
+    &__visible {
+        padding: 2rem 7.5rem;
+    }
+
+    &__invisible {
+        padding: 2rem 0;
+        position: absolute;
+        top: -100%;
+        left: 0;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to top, var(--color-primary-light), var(--color-primary-dark));
+    }
+    
+    &:hover &__visible {
+        // Cannot use top since it is not absolute positioning
+        transform: translateY(100%);
+    }
+
+    &:hover &__invisible {
+        top: 0%;
+    }
+    
+    &:focus {
+        outline: none;
+        animation: pulsate 1s infinite;
+    }
+}
