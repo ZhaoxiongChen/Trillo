@@ -53,6 +53,11 @@
     margin-right: 4.5rem;
 }
 
-.user-reviews{
+.user-reviews {
     flex: 1;
+
+    // Center the inline-button
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
